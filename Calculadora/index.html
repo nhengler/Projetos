@@ -1,1 +1,73 @@
+<body style="background: #D9D9D9">
 
+    <div class="container">
+      <div class="row">
+        <div class="col d-flex justify-content-center">
+          <br />
+
+          <div class="calculadora">
+            <input id="resultado" type="text" class="form-control resultado" placeholder="0" disabled="disabled" />
+            
+            <div class="row">
+              <button onclick="calcular('acao', 'c')" type="button" class="btn btn-dark btn-lg clear font-weight-light">C</button>
+              <button onclick="calcular('acao', '/')" type="button" class="btn btn-dark btn-lg font-weight-light">/</button>
+              <button onclick="calcular('acao', '*')" type="button" class="btn btn-dark btn-lg font-weight-light">x</button>
+            </div>
+
+            <div class="row">
+              <button onclick="calcular('acao', 7)" type="button" class="btn btn-dark btn-lg font-weight-light">7</button>
+              <button onclick="calcular('acao', 8)" type="button" class="btn btn-dark btn-lg font-weight-light">8</button>
+              <button onclick="calcular('acao', 9)" type="button" class="btn btn-dark btn-lg font-weight-light">9</button>
+              <button onclick="calcular('acao', '-')" type="button" class="btn btn-dark btn-lg font-weight-light">-</button>
+            </div>
+            
+            <div class="row">
+              <button onclick="calcular('acao', 4)" type="button" class="btn btn-dark btn-lg font-weight-light">4</button>
+              <button onclick="calcular('acao', 5)" type="button" class="btn btn-dark btn-lg font-weight-light">5</button>
+              <button onclick="calcular('acao', 6)" type="button" class="btn btn-dark btn-lg font-weight-light">6</button>
+              <button onclick="calcular('acao', '+')" type="button" class="btn btn-dark btn-lg font-weight-light">+</button>
+            </div>
+
+            <div class="row">
+              <button onclick="calcular('acao', 1)" type="button" class="btn btn-dark btn-lg font-weight-light">1</button>
+              <button onclick="calcular('acao', 2)" type="button" class="btn btn-dark btn-lg font-weight-light">2</button>
+              <button onclick="calcular('acao', 3)" type="button" class="btn btn-dark btn-lg font-weight-light">3</button>
+              <button onclick="calcular('acao', '=')" type="button" class="btn btn-dark btn-lg enter">=</button>
+            </div>
+
+            <div class="row" style="margin-top: -60px">
+              <button onclick="calcular('acao', 0)" type="button" class="btn btn-dark zero btn-lg font-weight-light">0</button>
+              <button onclick="calcular('acao', '.')" type="button" class="btn btn-dark btn-lg font-weight-light">.</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>    
+    <script>
+        
+        //essa funcao foi atribuida com seus respectivos parametros em cada DIV (eles correspondem no consolo do browser) 
+        function calcular(tipo, valor){
+            if(tipo === 'acao'){
+
+                if(valor === 'c'){
+                    document.getElementById('resultado').value = ''
+                }
+
+                if(valor === '+' || valor === '-' || valor === '*' || valor === '/' || valor === '.'){
+                    document.getElementById('resultado').value += valor
+                }
+
+                if(valor === '='){
+                    document.getElementById('resultado').value
+                }
+
+
+            } else if (tipo === 'valor'){
+                document.getElementById('resultado').value += valor /* 1 - acessa o objeto input "resultado" pelo seu ID | 2 - acessa o atributo VALUE de "resultado" | 
+                3 - concatena o valor atual de 'resultado' com o parametro da funcao e atribui a ele o mesmo valor do parametro */
+                
+            }
+    }
+    </script>
+</body>	
